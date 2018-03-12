@@ -1,0 +1,14 @@
+.baseImage {
+  position: absolute;
+  background-image: url('./Images/WOlf.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.jumbotron {
+  height: 85vh;
+  margin-top: 80px;
+  background-color: #040C12;
+  opacity: .75;
+
+}
