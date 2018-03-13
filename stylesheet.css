@@ -2,21 +2,42 @@
   position: absolute;
   background-image: url('./Images/WOlf.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
   height: 100vh;
 }
 .jumbotron {
+  padding-top: 20px;
+  padding-bottom: 20px;
   border: thick double #32a1ce;
-  height: 85vh;
-  margin-top: 90px;
+  height: 40vh;
+  margin-top: 125px;
   background-color: #040C12;
-  opacity: .90;
+  opacity: .80;
+}
+.screen {
+  font-size: 25px;
+  color:  white;
+  font-family: 'Original Surfer', cursive;
+}
+.main_title {
+  padding-top: 20px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-shadow: 3px 3px #32a1ce;
+  color: #635EA6;
+  font-size: 75px;
+  font-family: 'Original Surfer', cursive;
+}
+
+.button_box {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-around;
+  width: 600px;
 
 }
 
 audio {
-
   margin-left: 25px;
-  margin-top: 700px;
+  margin-top: 850px;
   opacity: .3;
 }
