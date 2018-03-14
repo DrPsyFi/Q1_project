@@ -9,26 +9,34 @@
   <link href="https://fonts.googleapis.com/css?family=Original+Surfer" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheet.css">
-  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+
+  <script defer src="quiz_data.js"></script>
   <script defer src="main.js"></script>
+
 </head>
 
 <body>
   <div class="container-fluid baseImage">
     <p class='main_title'> Welcome Seeker of Wisdom </p>
+
     <div class="jumbotron col-lg-6 offset-lg-6">
-      <div class='container screen'>
-        Welcome l Seeker, I am Xenon the Wolf Spirit guide of these realms. I sense that you are here for guidance. Would you be so kind to give me your name to begin your journey.
+      <div class='container screenA'>Welcome Seeker, I am Xenon the Wolf Spirit guide of these realms. I sense that you are here for guidance. Press "Enter" to being your test.</div>
+
+      <div class='container hidden screenB'>
+        <div class="question">
+        </div>
+        <div class="options">
+        </div>
       </div>
-
-
     </div>
     <div class='col-lg-6 offset-lg-6'>
       <div class='container button_box'>
-        <button class="btn btn-primary btn-md" type="submit">Answer A</button>
-        <button class="btn btn-primary btn-md" type="submit">Answer B</button>
-        <button class="btn btn-primary btn-md" type="submit">Answer C</button>
-        <button class="btn btn-primary btn-md" type="submit">Answer D</button>
+        <button class="btn btn-danger btn-md" id='start' type="submit"> Start Quiz </button>
+        <button class="btn btn-primary btn-md d-none" type="submit">Answer A</button>
+        <button class="btn btn-primary btn-md d-none" type="submit">Answer B</button>
+        <button class="btn btn-primary btn-md d-none" type="submit">Answer C</button>
+        <button class="btn btn-primary btn-md d-none" type="submit">Answer D</button>
       </div>
     </div>
     <!-- Simple audio playback -->

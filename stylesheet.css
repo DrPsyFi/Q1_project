@@ -11,9 +11,14 @@
   height: 40vh;
   margin-top: 125px;
   background-color: #040C12;
-  opacity: .80;
+  opacity: 1;
 }
-.screen {
+.screenA {
+  font-size: 25px;
+  color:  white;
+  font-family: 'Original Surfer', cursive;
+}
+.screenB {
   font-size: 25px;
   color:  white;
   font-family: 'Original Surfer', cursive;
@@ -35,7 +40,9 @@
   width: 600px;
 
 }
-
+#start {
+  align-self: center;
+}
 audio {
   margin-left: 25px;
   margin-top: 850px;
