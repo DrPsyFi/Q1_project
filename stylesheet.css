@@ -14,7 +14,7 @@
   opacity: 1;
 }
 .screenA {
-  font-size: 25px;
+  font-size: 30px;
   color:  white;
   font-family: 'Original Surfer', cursive;
 }
@@ -40,8 +40,17 @@
   width: 600px;
 
 }
+
+.question {
+  align-content: center;
+}
+
 #start {
   align-self: center;
+}
+
+.hidden {
+  display: none;
 }
 
 audio {
