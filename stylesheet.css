@@ -34,7 +34,6 @@
 }
 
 .button_box {
-  margin-top: 35px;
   display: flex;
   justify-content: space-around;
   width: 600px;
@@ -52,9 +51,11 @@
 .hidden {
   display: none;
 }
-
+.options {
+  padding-top: 10px;
+}
 audio {
   margin-left: 25px;
-  margin-top: 850px;
-  opacity: .3;
+  margin-top: 60px;
+  opacity: .0;
 }

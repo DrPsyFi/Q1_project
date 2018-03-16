@@ -1,19 +1,48 @@
+
 /////////////////////// Variables /////////////////////////////////////////////
 
 const screenA = document.querySelector('.screenA')
 const ScreenB = document.querySelector('.screenB')
+let questionIndex = 0
+let total = 0
+
+
+///////////////////////////////////////////////////////////////////////////////
+////                          Local Storage                             ///////
+///////////////////////////////////////////////////////////////////////////////
+
+  if (window.localStorage){
+    const parsedIndex = JSON.parse(localStorage.getItem('currentIndex'))
+    const parsedTotal = JSON.parse(localStorage.getItem('currentTotal'))
+    if(parsedIndex && parsedTotal) {
+      let currentIndex = Number(localStorage.getItem('currentIndex'))
+      let currentTotal = Number(localStorage.getItem('currentTotal'))
+        questionIndex = currentIndex
+        total = currentTotal
+        renderQuestion(quiz[currentIndex])
+    }
+
+  }
+
+
+///////////////////////////////////////////////////////////////////////////////
+////////     Answer Selector Event Listener                              //////
+///////////////////////////////////////////////////////////////////////////////
+
 
 const answerSelector = document.querySelector('.button_box')
     answerSelector.addEventListener('click', function(event){
+      console.log('Hi')
       if(event.target.classList.contains('btn') && event.target.id !== "start"){
         let selectedAnswer = event.target.innerHTML
         let selectedId = selectedAnswer.slice(-1)
         updateScore(selectedId)
       }
     })
+//////////////////////////////////////////////////////////////////////////////
+////////            Start Button and Event Listener                   ////////
+/////////////////////////////////////////////////////////////////////////////
 
-let questionIndex = 0
-let total = 0
 
 const buttons = document.querySelectorAll('.btn')
 
@@ -24,7 +53,7 @@ const start = document.querySelector('#start')
       })
 
       start.classList.add('hidden')
-      renderQuestion(quiz[0])
+      renderQuestion(quiz[questionIndex])
     })
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -32,25 +61,28 @@ const start = document.querySelector('#start')
 ///////////////////////////////////////////////////////////////////////////////
 
 function updateScore(selectedId) {
-
+  console.log('yo')
   let testId = quiz[questionIndex].answer
+  console.log(testId)
   if (testId === parseInt(selectedId)) {
-    total += 1
+    console.log(true)
+    total =  total + 1
+    localStorage.setItem('currentTotal', total)
     getQuestion()
+    return total
   }
-  else {
-    getQuestion()
-  }
-  return total
-
+  getQuestion()
 }
+
 
 ////////////////////////////////////////////////////////////////////////////////
 /////                         Get Next Question                           /////
 ///////////////////////////////////////////////////////////////////////////////
 
 function getQuestion() {
+  console.log('dabba doo')
     questionIndex+= 1
+    localStorage.setItem('currentIndex', questionIndex)
   if (questionIndex <10) {
     renderQuestion(quiz[questionIndex])
   }
@@ -75,7 +107,6 @@ function renderQuestion(q) {
 
   quesContain.innerHTML = question
   divQContain.appendChild(quesContain)
-  console.log("are we here?")
   renderOptions(q)
 
 }
@@ -90,10 +121,10 @@ function renderOptions(q)  {
   for(const opt of q.options) {
     const li = document.createElement('li')
     li.innerHTML = `${opt}`
-    console.log("what about here?")
+
     options.appendChild(li)
   }
-  testStart = true
+
   divOContain.appendChild(options)
 }
 
@@ -112,9 +143,29 @@ function renderTotal() {
   divQContain.appendChild(quesContain)
 
   const divOContain = document.querySelector('.options')
-  divOContain.innerHTML = ''
+  divOContain.innerHTML = 'If you want to try again hit submit below.'
 
   buttons.forEach(function (button) {
     button.classList.add('hidden')
   })
+  localStorage.setItem('currentIndex', 0)
+  localStorage.setItem('currentTotal', 0)
+  anotherTime()
+
+}
+
+function anotherTime () {
+  let buttonBox = document.querySelector('.button_box')
+  let playAgain = document.createElement('button')
+    playAgain.innerHTML= 'Submit'
+    playAgain.classList.add('btn-danger')
+    playAgain.classList.add('btn')
+    playAgain.addEventListener('click', event => {
+      location.reload()
+    })
+
+
+  buttonBox.appendChild(playAgain)
+
+
 }
