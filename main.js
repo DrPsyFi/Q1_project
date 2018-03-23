@@ -19,10 +19,37 @@ let total = 0
       let currentTotal = Number(localStorage.getItem('currentTotal'))
         questionIndex = currentIndex
         total = currentTotal
-        renderQuestion(quiz[currentIndex])
+        renderQuestion(stQuiz[currentIndex])
     }
 
   }
+
+//////////////////////////////////////////////////////////////////////////////
+////////            Start Button and Event Listener                   ////////
+/////////////////////////////////////////////////////////////////////////////
+
+
+const buttons = document.querySelectorAll('.btn')
+
+//const name = document.querySelector('#name');
+
+const start = document.querySelector('#start')
+  start.addEventListener('click', (event) => {
+
+      buttons.forEach(function (button) {
+        button.classList.remove('hidden')
+      })
+      start.classList.add('hidden')
+      renderQuestion(stQuiz[questionIndex])
+    })
+//var name = document.getElementById('#name').value;
+
+  //   if(!name.value) {
+  //     alert("Please enter a User Name to continue.")
+  //     location.reload()
+  //   }
+  //
+  // })
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -31,30 +58,15 @@ let total = 0
 
 
 const answerSelector = document.querySelector('.button_box')
-    answerSelector.addEventListener('click', function(event){
-      console.log('Hi')
-      if(event.target.classList.contains('btn') && event.target.id !== "start"){
-        let selectedAnswer = event.target.innerHTML
-        let selectedId = selectedAnswer.slice(-1)
-        updateScore(selectedId)
-      }
-    })
-//////////////////////////////////////////////////////////////////////////////
-////////            Start Button and Event Listener                   ////////
-/////////////////////////////////////////////////////////////////////////////
+  answerSelector.addEventListener('click', function(event){
+    console.log('Hi')
+    if(event.target.classList.contains('btn') && event.target.id !== "start"){
+      let selectedAnswer = event.target.innerHTML
+      let selectedId = selectedAnswer.slice(-1)
+      updateScore(selectedId)
+    }
+})
 
-
-const buttons = document.querySelectorAll('.btn')
-
-const start = document.querySelector('#start')
-  start.addEventListener('click', (event) => {
-      buttons.forEach(function (button) {
-        button.classList.remove('hidden')
-      })
-
-      start.classList.add('hidden')
-      renderQuestion(quiz[questionIndex])
-    })
 
 ///////////////////////////////////////////////////////////////////////////////
 ///                           Update Score                                 ////
@@ -62,7 +74,7 @@ const start = document.querySelector('#start')
 
 function updateScore(selectedId) {
   console.log('yo')
-  let testId = quiz[questionIndex].answer
+  let testId = stQuiz[questionIndex].answer
   console.log(testId)
   if (testId === parseInt(selectedId)) {
     console.log(true)
@@ -84,7 +96,7 @@ function getQuestion() {
     questionIndex+= 1
     localStorage.setItem('currentIndex', questionIndex)
   if (questionIndex <10) {
-    renderQuestion(quiz[questionIndex])
+    renderQuestion(stQuiz[questionIndex])
   }
   else {
     renderTotal()
@@ -166,6 +178,9 @@ function anotherTime () {
 
 
   buttonBox.appendChild(playAgain)
+}
 
-
+function renderReset (){
+  questionIndex = 0
+  total = 0
 }

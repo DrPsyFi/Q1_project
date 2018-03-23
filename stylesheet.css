@@ -8,8 +8,8 @@
   padding-top: 20px;
   padding-bottom: 20px;
   border: thick double #32a1ce;
-  height: 40vh;
-  margin-top: 125px;
+  height: 55vh;
+  margin-top: 30px;
   background-color: #040C12;
   opacity: 1;
 }
@@ -37,7 +37,23 @@
   display: flex;
   justify-content: space-around;
   width: 600px;
+}
 
+.btn-pri {
+  color: white;
+  background-color: #32a1ce;
+  border-color: #635EA6;
+  border-width: thick;
+}
+.btn-sec {
+  color: white;
+  background-color: #635EA6;
+  border-color: #32a1ce;
+  border-width: thick;
+}
+#topic {
+  display: flex;
+  justify-content: space-around;
 }
 
 .question {
@@ -51,8 +67,13 @@
 .hidden {
   display: none;
 }
+.question{
+  padding-top: 10px;
+  font-size: 35px;
+}
 .options {
   padding-top: 10px;
+  font-size: 30px;
 }
 audio {
   margin-left: 25px;

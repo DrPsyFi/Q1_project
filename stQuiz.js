@@ -1,6 +1,6 @@
 var stQuiz= [
   {
-    'question': "What does the "T" stand for in James T Kirk?",
+    'question': `What does the 'T' stand for in James T Kirk?`,
     'options': ['Talented', 'Thelonius', 'Tiberius', 'Thermopoli'],
     'answer': 3
   },
@@ -36,7 +36,7 @@ var stQuiz= [
   },
   {
     'question': "Spock is half Vulcan and half _______?",
-    'options': ['Andorian', 'Woman','Romulan' , 'Vulcan'],
+    'options': ['Andorian', 'Woman','Romulan' , 'Human'],
     'answer': 4
   },
   {
@@ -48,4 +48,5 @@ var stQuiz= [
     'question': "What is the Hull designation on the Enterprise?",
     'options': ['USS-1965', 'THX-1138','UFP-Enterprise', 'NCC-1701'],
     'answer': 4
-  },
+  }
+]

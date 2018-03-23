@@ -10,7 +10,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheet.css">
 
+  <script defer src="stQuiz.js"></script>
   <script defer src="quiz_data.js"></script>
+
   <script defer src="main.js"></script>
 
 </head>
@@ -19,19 +21,20 @@
   <div class="container-fluid baseImage">
     <p class='main_title'> Welcome Seeker of Wisdom </p>
     <div class='container col-lg-6 offset-lg-6' id='topic'>
-      <row>
-        <button class="btn btn-primary btn-md hidden" type="submit">Topic A</button>
-        <button class="btn btn-primary btn-md hidden" type="submit">Topic B</button>
-      </row>
-      <row>
-        <button class="btn btn-primary btn-md hidden" type="submit">Topic C</button>
-        <button class="btn btn-primary btn-md hidden" type="submit">Topic D</button>
-      </row>
+      <!-- <button class="btn btn-sec btn-md hidden" type="submit">Topic A</button>
+      <button class="btn btn-sec btn-md hidden" type="submit">Topic B</button>
+      <button class="btn btn-sec btn-md hidden" type="submit">Topic C</button>
+      <button class="btn btn-sec btn-md hidden" type="submit">Topic D</button> -->
     </div>
     <div class='jumbotron col-lg-6 offset-lg-6'>
       <div class='container screenB '>
         <div class="question">
-          <div class='container screenA'>Welcome Seeker, I am Xenon the Wolf Spirit guide of these realms. I sense that you are here for guidance. Press "Start" to being your test.</div>
+          <div class='container screenA'>
+            <p>Welcome Seeker, I am Xenon the Wolf Spirit guide of these realms. I sense that you are here for guidance.</p>
+            <p>If you would like to test your knowlege please press submit</p>
+            <!-- <label for="UserName"></label>
+            <input id="userName" type="text" placeholder="User Name" name="text" min="1"> -->
+          </div>
         </div>
         <div class="options hidden">
         </div>
@@ -39,16 +42,17 @@
     </div>
     <div class='col-lg-6 offset-lg-6'>
       <div class='container button_box'>
+        <!-- <button class="btn btn-danger btn-md" id='name' type="submit"> Submit </button> -->
         <button class="btn btn-danger btn-md" id='start' type="submit"> Start Quiz </button>
-        <button class="btn btn-primary btn-md hidden" type="submit">Answer 1</button>
-        <button class="btn btn-primary btn-md hidden" type="submit">Answer 2</button>
-        <button class="btn btn-primary btn-md hidden" type="submit">Answer 3</button>
-        <button class="btn btn-primary btn-md hidden" type="submit">Answer 4</button>
+        <button class="btn btn-pri btn-md hidden" type="submit">Answer 1</button>
+        <button class="btn btn-pri btn-md hidden" type="submit">Answer 2</button>
+        <button class="btn btn-pri btn-md hidden" type="submit">Answer 3</button>
+        <button class="btn btn-pri btn-md hidden" type="submit">Answer 4</button>
       </div>
     </div>
-    <audio controls autoplay loop src="/music/Magical_Gravity.mp3">
+    <audio controls autoplay loop src="/music/01 Enterprise Bridge Sequence.m4a">
       Your browser does not support the <code>audio</code> element.
-    </audio>
+    </audio> -->
 </body>
 
 </html>
