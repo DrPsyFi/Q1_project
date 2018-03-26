@@ -1,6 +1,6 @@
 .baseImage {
   position: absolute;
-  background-image: url('./Images/WOlf.jpg');
+  background-image: url('./Images/Wolf.jpg');
   background-size: cover;
   height: 100vh;
 }
